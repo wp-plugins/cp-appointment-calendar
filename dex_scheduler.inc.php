@@ -36,20 +36,34 @@ initAppCalendar("cal1",<?php echo get_option('calendar_pages', DEX_APPOINTMENTS_
  {
     if (document.FormEdit.selDaycal1.value != '')
     {
-        var minute = document.FormEdit.selMinutecal1.value;
+        dex_current_calendar_item = "1";
+        var timead = "";
+        var hour = document.getElementById("selHourcal"+dex_current_calendar_item ).value;
+        if (dex_global_military_time == '0')
+        {
+            if (parseInt(hour) > 12)
+            {
+                timead = " pm";
+                hour = parseInt(hour)-12;
+            }
+            else
+            {
+                timead = " am";
+            }
+        }
+        var minute = document.getElementById("selMinutecal"+dex_current_calendar_item ).value;
         if (minute.length == 1)
             minute = "0"+minute;
+        minute = hour + ":" + minute + timead;
         if (dex_global_date_format == '1')    
             selected_date = document.FormEdit.selDaycal1.value+"/"
                                                       +document.FormEdit.selMonthcal1.value+"/"
                                                       +document.FormEdit.selYearcal1.value+", "
-                                                      +document.FormEdit.selHourcal1.value+":"
                                                       +minute;
         else
             selected_date = document.FormEdit.selMonthcal1.value+"/"
                                                       +document.FormEdit.selDaycal1.value+"/"
                                                       +document.FormEdit.selYearcal1.value+", "
-                                                      +document.FormEdit.selHourcal1.value+":"
                                                       +minute;                                                      
         document.getElementById("selddiv").innerHTML = "<?php echo _e("Selected date"); ?>: "+selected_date;
     }
