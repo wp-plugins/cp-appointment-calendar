@@ -26,8 +26,10 @@ var dex_global_maxdate = '<?php $value = get_option('calendar_maxdate', DEX_APPO
 initAppCalendar("cal1",<?php echo get_option('calendar_pages', DEX_APPOINTMENTS_DEFAULT_CALENDAR_PAGES); ?>,2,"<?php echo get_option('calendar_language', DEX_APPOINTMENTS_DEFAULT_CALENDAR_LANGUAGE); ?>",{m1:"<?php _e('Please select the appointment time.'); ?>"});
 </script>
 <input name="dex_appointments_post" type="hidden" id="1" /><input name="selDaycal1" type="hidden" id="selDaycal1" /><input name="selMonthcal1" type="hidden" id="selMonthcal1" /><input name="selYearcal1" type="hidden" id="selYearcal1" /><input name="selHourcal1" type="hidden" id="selHourcal1" /><input name="selMinutecal1" type="hidden" id="selMinutecal1" />
-<div style="z-index:1000;">
+<div class="appContainer">
+<div style="z-index:1000;" class="appContainer2">
   <div id="cal1Container"></div>
+</div>
 </div>
 <div style="clear:both;"></div>
 <div id="selddiv" style="font-weight: bold;margin-top:5px;padding:3px;"></div>
