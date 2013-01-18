@@ -285,7 +285,7 @@ function dex_appointments_check_posted_data() {
 <input type="hidden" name="return" value="<?php echo get_option('url_ok', DEX_APPOINTMENTS_DEFAULT_OK_URL); ?>">
 <input type="hidden" name="cancel_return" value="<?php echo get_option('url_cancel', DEX_APPOINTMENTS_DEFAULT_CANCEL_URL); ?>" />
 <input type="hidden" name="no_note" value="1" />
-<input type="hidden" name="currency_code" value="<?php echo get_option('currency', DEX_APPOINTMENTS_DEFAULT_CURRENCY); ?>" />
+<input type="hidden" name="currency_code" value="<?php echo strtoupper(get_option('currency', DEX_APPOINTMENTS_DEFAULT_CURRENCY)); ?>" />
 <input type="hidden" name="lc" value="<?php echo get_option('paypal_language', DEX_APPOINTMENTS_DEFAULT_PAYPAL_LANGUAGE); ?>" />
 <input type="hidden" name="bn" value="PP-BuyNowBF" />
 <input type="hidden" name="notify_url" value="<?php echo cp_appointment_get_FULL_site_url(); ?>/?ipncheck=1&itemnumber=<?php echo $item_number; ?>" />
