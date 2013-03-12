@@ -7,11 +7,10 @@ if ( !defined('DEX_AUTH_INCLUDE') )
 }
 
 ?>
-<form name="FormEdit" action="<?php get_site_url(); ?>" method="post" onsubmit="return doValidate(this);">
+<form name="FormEdit" action="<?php get_site_url(); ?>" method="post" onsubmit="return doValidate(this);" class="cpp_form">
 <?php
   echo __("Select date and time").":";
 ?>
-
 <link rel="stylesheet" type="text/css" href="<?php echo plugins_url('TDE_AppCalendar/all-css.css', __FILE__); ?>" />
 <script>
 var pathCalendar = "<?php echo cp_appointment_get_site_url(); ?>";
