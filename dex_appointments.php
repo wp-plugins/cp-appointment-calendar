@@ -375,6 +375,7 @@ function dex_process_ready_to_go_appointment($itemnumber, $payer_email = "")
    // SEND EMAIL TO ADMIN
    wp_mail($SYSTEM_RCPT_EMAIL, $email_subject2, $email_content2,
             "From: \"$SYSTEM_EMAIL\" <".$SYSTEM_EMAIL.">\r\n".
+            "Reply-To: \"".$myrows[0]->email."\" <".$myrows[0]->email.">\r\n".
             "Content-Type: text/plain; charset=utf-8\n".
             "X-Mailer: PHP/" . phpversion());      
             
