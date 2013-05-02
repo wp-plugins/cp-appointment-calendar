@@ -152,7 +152,8 @@ if ( !is_admin() )
     <table class="form-table">
         <tr valign="top">        
         <th scope="row">Enable Paypal Payments?</th>
-        <td><input type="checkbox" name="enable_paypal" disabled size="40" value="1" <?php if (get_option('enable_paypal',DEX_APPOINTMENTS_DEFAULT_ENABLE_PAYPAL)) echo 'checked'; ?> /></td>
+        <td><input type="checkbox" name="enable_paypal" disabled size="40" value="1" <?php if (get_option('enable_paypal',DEX_APPOINTMENTS_DEFAULT_ENABLE_PAYPAL)) echo 'checked'; ?> /> The feature for working without PayPal is implemented/available in the <a href="http://wordpress.dwbooster.com/calendars/cp-appointment-calendar#download">pro version</a>.</em>
+        </td>
         </tr>    
     
         <tr valign="top">        

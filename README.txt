@@ -33,6 +33,8 @@ Features:
 * You can restrict specific dates.
 * Easy Ajax administration for the calendar.
 
+Please note that this is a plugin originally designed to accept bookings linked to PayPal payments. The feature for working without PayPal is implemented/available in the Pro version: http://wordpress.dwbooster.com/calendars/cp-appointment-calendar#download
+
 == Installation ==
 
 To install CP Appointment Calendar, follow these steps:
