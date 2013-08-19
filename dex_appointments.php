@@ -505,7 +505,7 @@ function dex_appointments_calendar_update2() {
                 if ($j!=count($data)-1)
                     $description .= "\n";
             }
-            $wpdb->query("update  ".TDE_APP_CALENDAR_DATA_TABLE." set ".TDE_APP_DATA_DATETIME."='".$datetime."',".TDE_APP_DATA_TITLE."='".$wpdb->escape($title)."',".TDE_APP_DATA_DESCRIPTION."='".$wpdb->escape($description)."'  where ".TDE_APP_DATA_IDCALENDAR."=".$calid." and ".TDE_APP_DATA_ID."=".$_POST["sqlId"]);
+            $wpdb->query("update  ".TDE_APP_CALENDAR_DATA_TABLE." set ".TDE_APP_DATA_DATETIME."='".$datetime."',".TDE_APP_DATA_TITLE."='".esc_sql($title)."',".TDE_APP_DATA_DESCRIPTION."='".esc_sql($description)."'  where ".TDE_APP_DATA_IDCALENDAR."=".$calid." and ".TDE_APP_DATA_ID."=".$_POST["sqlId"]);
         }
         else if ($_GET["act"]=='add')
         {
@@ -522,7 +522,7 @@ function dex_appointments_calendar_update2() {
                 if ($j!=count($data)-1)
                     $description .= "\n";
             }
-            $wpdb->query("insert into ".TDE_APP_CALENDAR_DATA_TABLE."(".TDE_APP_DATA_IDCALENDAR.",".TDE_APP_DATA_DATETIME.",".TDE_APP_DATA_TITLE.",".TDE_APP_DATA_DESCRIPTION.") values(".$calid.",'".$datetime."','".$wpdb->escape($title)."','".$wpdb->escape($description)."') "); 
+            $wpdb->query("insert into ".TDE_APP_CALENDAR_DATA_TABLE."(".TDE_APP_DATA_IDCALENDAR.",".TDE_APP_DATA_DATETIME.",".TDE_APP_DATA_TITLE.",".TDE_APP_DATA_DESCRIPTION.") values(".$calid.",'".$datetime."','".esc_sql($title)."','".esc_sql($description)."') "); 
             echo  $wpdb->insert_id;
             
         }
