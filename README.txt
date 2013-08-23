@@ -53,6 +53,14 @@ A: The product's page contains detailed information about each field and customi
 
 http://wordpress.dwbooster.com/calendars/cp-appointment-calendar
 
+= Q: I'm getting this message: "Destination folder already exists". Solution? ==
+
+A: The previously installed version of the plugin (if any) must be deleted before installing a new downloaded version.
+
+This is a safe step, the plugin's data and settings won't be lost during the process.
+
+Another alternative is to overwrite the plugin files through a FTP connection. This is also a safe step.
+
 == Screenshots ==
 
 1. Inserting the calendar into a page.
