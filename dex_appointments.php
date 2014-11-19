@@ -287,7 +287,7 @@ function dex_appointments_check_posted_data() {
 <input type="hidden" name="no_note" value="1" />
 <input type="hidden" name="currency_code" value="<?php echo strtoupper(get_option('currency', DEX_APPOINTMENTS_DEFAULT_CURRENCY)); ?>" />
 <input type="hidden" name="lc" value="<?php echo get_option('paypal_language', DEX_APPOINTMENTS_DEFAULT_PAYPAL_LANGUAGE); ?>" />
-<input type="hidden" name="bn" value="PP-BuyNowBF" />
+<input type="hidden" name="bn" value="NetFactorSL_SI_Custom" />
 <input type="hidden" name="notify_url" value="<?php echo cp_appointment_get_FULL_site_url(); ?>/?ipncheck=1&itemnumber=<?php echo $item_number; ?>" />
 <input type="hidden" name="ipn_test" value="1" />
 <input class="pbutton" type="hidden" value="Buy Now" /></div>
