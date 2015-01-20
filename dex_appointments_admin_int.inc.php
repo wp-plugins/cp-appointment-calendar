@@ -10,6 +10,25 @@ if ( !is_admin() )
 <div class="wrap">
 <h2>CP Appointment Calendar</h2>
 
+
+
+<div style="border:1px solid #664444;background-color:#FDFDC8;width:90%;padding-left:10px;padding-right:10px;font-size:12px;">
+    <p><strong>Upgrade notice:</strong><br /><br />
+        This plugin is the <strong>free version of the CP Appointment Calendar</strong>. If you already have the pro version please use your personal download link to update it to the latest pro version.<br />
+        <br /><strong>Important note:</strong> There is a more advanced plugin named <strong><a href="http://wordpress.dwbooster.com/calendars/appointment-booking-calendar?cpapp=up#download">Appointment Booking Calendar</a></strong> developed based in this one that contains all the features present in this plugin plus a large additional set of features in both free and commercial versions, including (also in <strong>free version</strong>):
+    <br ><br >&nbsp; - Anti-spam Captcha image.
+    <br >&nbsp; - Multi-slot Bookings.
+    <br >&nbsp; - Language & translations support
+    <br >&nbsp; - iCal feeds
+    <br >&nbsp; - Printable list of appointments
+    <br >&nbsp; - Many additional configuiration settings
+    <br >&nbsp; - ... and a lot more of features
+<br /><br />
+
+ To see the plugin details go to the <strong><a href="http://wordpress.dwbooster.com/calendars/appointment-booking-calendar?cpapp=up#download">Appointment Booking Calendar</a></strong> page.</p>
+</div>
+
+
 <form method="post" action="options.php"> 
 
 <?php settings_fields( 'dex-appointments-group' ); ?>
@@ -240,6 +259,7 @@ if ( !is_admin() )
 [<a href="http://wordpress.dwbooster.com/contact-us" target="_blank">Request Custom Modifications</a>] | [<a href="http://wordpress.dwbooster.com/calendars/cp-appointment-calendar" target="_blank">Help</a>]
 </form>
 </div>
+
 
 
 

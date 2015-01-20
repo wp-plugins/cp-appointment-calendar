@@ -3,7 +3,7 @@
 Plugin Name: CP Appointment Calendar
 Plugin URI: http://wordpress.dwbooster.com/calendars/cp-appointment-calendar
 Description: This plugin allows you to easily insert appointments forms into your WP website.
-Version: 1.01
+Version: 1.1.5
 Author: CodePeople.net
 Author URI: http://codepeople.net
 License: GPL

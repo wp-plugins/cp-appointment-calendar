@@ -4,7 +4,7 @@ Donate link: http://wordpress.dwbooster.com/calendars/cp-appointment-calendar
 Tags: calendar,bookings,appointments,paypal,payments,appointment,reservations
 Requires at least: 3.0.5
 Tested up to: 4.1
-Stable tag: 1.0.1
+Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -71,9 +71,26 @@ Another alternative is to overwrite the plugin files through a FTP connection. T
 
 = 1.0 =
 * First stable version released.
-* More configuration options added.
-
-== Upgrade Notice ==
 
 = 1.0.1 =
 First stable version released.
+* More configuration options added.
+
+= 1.1.5 =
+* Compatible with the latest WP versions
+* Better interface and access to the plugin options
+* Minor bug fixes
+
+Important note: If you are using the Professional version don't update via the WP dashboard but using your personal update link. Contact us if you need further information: http://wordpress.dwbooster.com/support
+
+== Upgrade Notice ==
+
+Very Important note: If you are using the Professional version don't update via the WP dashboard but using your personal update link. Contact us if you need further information: http://wordpress.dwbooster.com/support
+
+= 1.1.5 =
+* Compatible with the latest WP versions
+* Better interface and access to the plugin options
+* Minor bug fixes
+
+
+Important note: If you are using the Professional version don't update via the WP dashboard but using your personal update link. Contact us if you need further information: http://wordpress.dwbooster.com/support
