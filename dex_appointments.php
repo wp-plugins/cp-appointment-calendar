@@ -340,6 +340,8 @@ function dex_process_ready_to_go_appointment($itemnumber, $payer_email = "")
 {
    global $wpdb;
    
+   $itemnumber = intval($itemnumber);
+   
    $myrows = $wpdb->get_results( "SELECT * FROM ".DEX_APPOINTMENTS_TABLE_NAME." WHERE id=".$itemnumber );   
        
    $SYSTEM_EMAIL = get_option('notification_from_email', DEX_APPOINTMENTS_DEFAULT_PAYPAL_EMAIL);
