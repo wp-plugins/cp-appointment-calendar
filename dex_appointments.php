@@ -534,16 +534,28 @@ function dex_appointments_calendar_update2() {
 }
 
 
-function cp_appointment_get_site_url()
+function cp_appointment_get_site_url($admin = false)
 {
-    $url = parse_url(get_site_url());
+    $blog = get_current_blog_id();
+    if( $admin ) 
+        $url = get_admin_url( $blog );	
+    else 
+        $url = get_home_url( $blog );	
+
+    $url = parse_url($url);
     $url = rtrim(@$url["path"],"/");
     return $url;
 }
 
-function cp_appointment_get_FULL_site_url()
+function cp_appointment_get_FULL_site_url($admin = false)
 {
-    $url = parse_url(get_site_url());
+    $blog = get_current_blog_id();
+    if( $admin ) 
+        $url = get_admin_url( $blog );	
+    else 
+        $url = get_home_url( $blog );	
+
+    $url = parse_url($url);
     $url = rtrim($url["path"],"/");
     $pos = strpos($url, "://");    
     if ($pos === false)
