@@ -342,7 +342,7 @@ function dex_process_ready_to_go_appointment($itemnumber, $payer_email = "")
    
    $itemnumber = intval($itemnumber);
    
-   $myrows = $wpdb->get_results( "SELECT * FROM ".DEX_APPOINTMENTS_TABLE_NAME." WHERE id=".$itemnumber );   
+   $myrows = $wpdb->get_results( "SELECT * FROM ".DEX_APPOINTMENTS_TABLE_NAME." WHERE id=".intval($itemnumber) );   
        
    $SYSTEM_EMAIL = get_option('notification_from_email', DEX_APPOINTMENTS_DEFAULT_PAYPAL_EMAIL);
    $SYSTEM_RCPT_EMAIL = get_option('notification_destination_email', DEX_APPOINTMENTS_DEFAULT_PAYPAL_EMAIL);
@@ -408,8 +408,8 @@ function dex_appointments_calendar_load() {
     @ob_clean();
     header("Cache-Control: no-store, no-cache, must-revalidate");
     header("Pragma: no-cache");        
-    $calid = str_replace  (TDE_APP_CAL_PREFIX, "",$_GET["id"]);
-    $query = "SELECT * FROM ".TDE_APP_CONFIG." where ".TDE_APP_CONFIG_ID."='".$calid."'";    
+    $calid = str_replace  (TDE_APP_CAL_PREFIX, "", $_GET["id"]);
+    $query = "SELECT * FROM ".TDE_APP_CONFIG." where ".TDE_APP_CONFIG_ID."='".esc_sql($calid)."'";    
     $row = $wpdb->get_results($query,ARRAY_A);
     if ($row[0])
     {
@@ -435,7 +435,7 @@ function dex_appointments_calendar_load2() {
     header("Cache-Control: no-store, no-cache, must-revalidate");
     header("Pragma: no-cache");      
     $calid = str_replace  (TDE_APP_CAL_PREFIX, "",$_GET["id"]);
-    $query = "SELECT * FROM ".TDE_APP_CALENDAR_DATA_TABLE." where ".TDE_APP_DATA_IDCALENDAR."='".$calid."'";
+    $query = "SELECT * FROM ".TDE_APP_CALENDAR_DATA_TABLE." where ".TDE_APP_DATA_IDCALENDAR."='".esc_sql($calid)."'";
     $row_array = $wpdb->get_results($query,ARRAY_A);
     foreach ($row_array as $row)
     {
@@ -467,7 +467,7 @@ function dex_appointments_calendar_update() {
     if ( $user_ID )
     {  
         $calid = str_replace  (TDE_APP_CAL_PREFIX, "",$_GET["id"]);
-        $wpdb->query("update  ".TDE_APP_CONFIG." set ".TDE_APP_CONFIG_WORKINGDATES."='".$_POST["workingDates"]."',".TDE_APP_CONFIG_RESTRICTEDDATES."='".$_POST["restrictedDates"]."',".TDE_APP_CONFIG_TIMEWORKINGDATES0."='".$_POST["timeWorkingDates0"]."',".TDE_APP_CONFIG_TIMEWORKINGDATES1."='".$_POST["timeWorkingDates1"]."',".TDE_APP_CONFIG_TIMEWORKINGDATES2."='".$_POST["timeWorkingDates2"]."',".TDE_APP_CONFIG_TIMEWORKINGDATES3."='".$_POST["timeWorkingDates3"]."',".TDE_APP_CONFIG_TIMEWORKINGDATES4."='".$_POST["timeWorkingDates4"]."',".TDE_APP_CONFIG_TIMEWORKINGDATES5."='".$_POST["timeWorkingDates5"]."',".TDE_APP_CONFIG_TIMEWORKINGDATES6."='".$_POST["timeWorkingDates6"]."'  where ".TDE_APP_CONFIG_ID."=".$calid);   
+        $wpdb->query("update  ".TDE_APP_CONFIG." set ".TDE_APP_CONFIG_WORKINGDATES."='".$_POST["workingDates"]."',".TDE_APP_CONFIG_RESTRICTEDDATES."='".$_POST["restrictedDates"]."',".TDE_APP_CONFIG_TIMEWORKINGDATES0."='".$_POST["timeWorkingDates0"]."',".TDE_APP_CONFIG_TIMEWORKINGDATES1."='".$_POST["timeWorkingDates1"]."',".TDE_APP_CONFIG_TIMEWORKINGDATES2."='".$_POST["timeWorkingDates2"]."',".TDE_APP_CONFIG_TIMEWORKINGDATES3."='".$_POST["timeWorkingDates3"]."',".TDE_APP_CONFIG_TIMEWORKINGDATES4."='".$_POST["timeWorkingDates4"]."',".TDE_APP_CONFIG_TIMEWORKINGDATES5."='".$_POST["timeWorkingDates5"]."',".TDE_APP_CONFIG_TIMEWORKINGDATES6."='".$_POST["timeWorkingDates6"]."'  where ".TDE_APP_CONFIG_ID."=".intval($calid));   
     }
     
     exit();		    
@@ -489,7 +489,7 @@ function dex_appointments_calendar_update2() {
         if ($_GET["act"]=='del')
         {
             $calid = str_replace  (TDE_APP_CAL_PREFIX, "",$_GET["id"]);
-            $wpdb->query("delete from ".TDE_APP_CALENDAR_DATA_TABLE." where ".TDE_APP_DATA_IDCALENDAR."=".$calid." and ".TDE_APP_DATA_ID."=".$_POST["sqlId"]);
+            $wpdb->query("delete from ".TDE_APP_CALENDAR_DATA_TABLE." where ".TDE_APP_DATA_IDCALENDAR."=".intval($calid)." and ".TDE_APP_DATA_ID."=".intval($_POST["sqlId"]));
             
         }
         else if ($_GET["act"]=='edit')
@@ -507,7 +507,7 @@ function dex_appointments_calendar_update2() {
                 if ($j!=count($data)-1)
                     $description .= "\n";
             }
-            $wpdb->query("update  ".TDE_APP_CALENDAR_DATA_TABLE." set ".TDE_APP_DATA_DATETIME."='".$datetime."',".TDE_APP_DATA_TITLE."='".esc_sql($title)."',".TDE_APP_DATA_DESCRIPTION."='".esc_sql($description)."'  where ".TDE_APP_DATA_IDCALENDAR."=".$calid." and ".TDE_APP_DATA_ID."=".$_POST["sqlId"]);
+            $wpdb->query("update  ".TDE_APP_CALENDAR_DATA_TABLE." set ".TDE_APP_DATA_DATETIME."='".$datetime."',".TDE_APP_DATA_TITLE."='".esc_sql($title)."',".TDE_APP_DATA_DESCRIPTION."='".esc_sql($description)."'  where ".TDE_APP_DATA_IDCALENDAR."=".intval($calid)." and ".TDE_APP_DATA_ID."=".intval($_POST["sqlId"]));
         }
         else if ($_GET["act"]=='add')
         {
