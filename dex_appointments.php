@@ -386,11 +386,7 @@ function dex_process_ready_to_go_appointment($itemnumber, $payer_email = "")
                                                                         'datatime' => date("Y-m-d H:i:s", strtotime($myrows[0]->buffered_date)), 
                                                                         'title' => $myrows[0]->email, 
                                                                         'description' => str_replace("\n","<br />", $information)
-                                                                         ) );             
-   
-   // $fp = fopen(dirname( __FILE__ ) .'/TDE_AppCalendar/admin/database/cal1data.txt', 'a');                                                              
-   // fwrite($fp, $myrows[0]->buffered_date);
-   // fclose($fp);	 
+                                                                         ) );
     
 
 }
