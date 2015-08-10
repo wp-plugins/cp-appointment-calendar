@@ -8,7 +8,7 @@ if ( !is_admin() )
 
 ?>
 <div class="wrap">
-<h2>CP Appointment Calendar</h2>
+<h1>CP Appointment Calendar</h1>
 
 
 
